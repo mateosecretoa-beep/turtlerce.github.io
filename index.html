@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrera de Tortugas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f1ea;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        #bets {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+            width: 420px;
+        }
+
+        .player-block {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+
+        .player-block h3 {
+            margin: 0 0 4px 0;
+        }
+
+        input, select {
+            padding: 6px;
+            font-size: 14px;
+        }
+
+        #startBtn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 6px;
+        }
+
+        #startBtn:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+        }
+
+        canvas {
+            background: white;
+            border: 2px solid #333;
+            border-radius: 6px;
+        }
+
+        #results {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            min-height: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Carrera de Tortugas</h1>
+
+<div id="bets">
+    <div class="player-block">
+        <h3>Jugador 1</h3>
+        <input type="text" id="name1" placeholder="Nombre">
+        <select id="turtle1">
+            <option value="Benito">Benito (verde)</option>
+            <option value="Carlitos">Carlitos (rojo)</option>
+            <option value="Pablito">Pablito (azul)</option>
+            <option value="Juanito">Juanito (amarillo)</option>
+            <option value="Pedrito">Pedrito (naranja)</option>
+            <option value="Tito">Tito (rosa)</option>
+        </select>
+        <input type="number" id="bet1" placeholder="Dinero a apostar" min="1" value="10">
+    </div>
+
+    <div class="player-block">
+        <h3>Jugador 2</h3>
+        <input type="text" id="name2" placeholder="Nombre">
+        <select id="turtle2">
+            <option value="Benito">Benito (verde)</option>
+            <option value="Carlitos">Carlitos (rojo)</option>
+            <option value="Pablito">Pablito (azul)</option>
+            <option value="Juanito">Juanito (amarillo)</option>
+            <option value="Pedrito">Pedrito (naranja)</option>
+            <option value="Tito">Tito (rosa)</option>
+        </select>
+        <input type="number" id="bet2" placeholder="Dinero a apostar" min="1" value="10">
+    </div>
+
+    <button id="startBtn">¡Comenzar la carrera!</button>
+</div>
+
+<canvas id="track" width="850" height="330"></canvas>
+
+<div id="results"></div>
+
+<script src="turtleRace.js"></script>
+</body>
+</html>
